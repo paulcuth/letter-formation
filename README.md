@@ -1,4 +1,11 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# letter-formation
+
+⚠️ Work in progress ⚠️
+
+A tool to help tutor people learning to write.
+
+---
+
 
 ## Available Scripts
 
