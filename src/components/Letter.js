@@ -40,7 +40,7 @@ const MARKS = {
   ),
   s: (
     <path
-      d="M 40 40 C 40 40, 40 30, 25 30 S 5 50, 25 50 S 45 70, 25 70 C 10 70, 10 60, 10 60"
+      d="M 40 38 C 40 40, 38 31, 25 30 S 5 50, 25 50 S 45 70, 25 70 C 12 69, 10 60, 10 62"
       stroke="black"
       fill="transparent"
     />
@@ -53,7 +53,7 @@ export const FORMS = {
   c: ["top-circle-gap", "bottom-circle-gap"],
   d: ["right-ascender", "right-side", "top-circle", "bottom-circle"],
   e: ["middle", "top-circle", "bottom-circle-gap"],
-  f: ["top-circle", "left-side-bottom", "left-descender", "bottom-gap"],
+  f: ["top-circle-gap", "left-side-bottom", "left-descender", "bottom-gap"],
   g: ["top-circle", "bottom-circle", "right-side", "descender-circle"],
   h: ["left-ascender", "left-side", "top-circle", "right-side-bottom"],
   i: ["left-side", "left-dot"],
@@ -73,7 +73,7 @@ export const FORMS = {
   o: ["top-circle", "bottom-circle"],
   p: ["left-side", "left-descender", "top-circle", "bottom-circle"],
   q: ["top-circle", "bottom-circle", "right-side", "right-descender"],
-  r: ["left-side", "top-circle"],
+  r: ["left-side", "top-circle-gap"],
   s: ["s"],
   t: ["left-ascender", "left-side-top", "bottom-circle-gap", "top-gap"],
   u: ["left-side-top", "bottom-circle", "right-side"],
