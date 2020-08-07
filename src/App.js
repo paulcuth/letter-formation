@@ -1,40 +1,62 @@
-import React from "react";
-import Letter, { FORMS } from "./components/Letter";
+import React, { useState } from "react";
+import styled from "styled-components";
+
+import Sentence from "./components/Sentence";
+
+const Header = styled.header`
+  padding: 80px 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e67e22;
+
+  @media print {
+    display: none;
+  }
+`;
+
+const Label = styled.label`
+  width: 50%;
+  color: white;
+  line-height: 2em;
+  text-indent: 16px;
+`;
+
+const Input = styled.input`
+  padding: 8px 16px;
+  width: 100%;
+  border-radius: 20px;
+  border: 0;
+  font-size: 1.2em;
+  border: 2px solid transparent;
+  outline: none;
+
+  &:focus {
+    border-color: #34495e;
+  }
+`;
+
+const Content = styled.section`
+  padding: 32px;
+`;
 
 function App() {
+  const [sentence, setSentence] = useState("today we went to the park");
   return (
     <>
-      <div>
-        <Letter marks={FORMS.a} />
-        <Letter marks={FORMS.b} />
-        <Letter marks={FORMS.c} />
-        <Letter marks={FORMS.d} />
-        <Letter marks={FORMS.e} />
-        <Letter marks={FORMS.f} />
-        <Letter marks={FORMS.g} />
-        <Letter marks={FORMS.h} />
-        <Letter marks={FORMS.i} size="narrow" />
-        <Letter marks={FORMS.j} />
-        <Letter marks={FORMS.k} />
-        <Letter marks={FORMS.l} />
-        <Letter marks={FORMS.m} />
-        <Letter marks={FORMS.n} />
-        <Letter marks={FORMS.o} />
-        <Letter marks={FORMS.p} />
-        <Letter marks={FORMS.q} />
-        <Letter marks={FORMS.r} />
-        <Letter marks={FORMS.s} />
-        <Letter marks={FORMS.t} />
-        <Letter marks={FORMS.u} />
-        <Letter marks={FORMS.v} />
-        <Letter marks={FORMS.w} />
-        <Letter marks={FORMS.x} />
-        <Letter marks={FORMS.y} />
-        <Letter marks={FORMS.z} />
-      </div>
-      <div>
-        <Letter size="wide" />
-      </div>
+      <Header>
+        <Sentence value="letter formations" />
+        <Label>
+          Write something awesome
+          <Input
+            defaultValue={sentence}
+            onChange={(e) => setSentence(e.currentTarget.value)}
+          />
+        </Label>
+      </Header>
+      <Content>
+        <Sentence value={sentence} underline shadows />
+      </Content>
     </>
   );
 }

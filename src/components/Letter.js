@@ -1,5 +1,9 @@
 import React from "react";
 
+const lightGrey = "rgba(0,0,0,.1)";
+const grey = "rgba(0,0,0,.15)";
+const darkGrey = "rgba(0,0,0,.2)";
+
 const MARKS = {
   "left-dot": <circle cx="5" cy="5" r="3.5" fill="black" stroke-width="0" />,
   "left-ascender": <line x1="5" x2="5" y1="5" y2="30" />,
@@ -36,7 +40,7 @@ const MARKS = {
     <path d="M 5 50 A 20 20, 0, 0, 0, 40 64" fill="transparent" />
   ),
   "descender-circle": (
-    <path d="M 45 70 L 45 75 A 20 20, 0, 0, 1, 5 75" fill="transparent" />
+    <path d="M 45 70 L 45 75 A 20 20, 0, 0, 1, 10 89" fill="transparent" />
   ),
   s: (
     <path
@@ -45,6 +49,7 @@ const MARKS = {
       fill="transparent"
     />
   ),
+  "full-stop": <circle cx="5" cy="70" r="3.5" fill="black" stroke-width="0" />,
 };
 
 export const FORMS = {
@@ -80,11 +85,13 @@ export const FORMS = {
   v: ["top-left-bottom-middle", "top-right-bottom-middle"],
   w: [
     ["left-side-top", "bottom-circle", "right-side-top"],
-    ["bottom-circle", "right-side"],
+    ["bottom-circle", "right-side-top"],
   ],
   x: ["top-left-bottom-right", "top-right-bottom-left"],
   y: ["left-side-top", "bottom-circle", "right-side", "descender-circle"],
   z: ["top", "top-right-bottom-left", "bottom"],
+  ".": ["full-stop"],
+  " ": [],
 };
 
 export default function Letter(props) {
@@ -102,14 +109,14 @@ export default function Letter(props) {
       height={100}
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      style={{ margin: "24px 2px" }}
+      style={{ margin: "16px 2px" }}
     >
       {size !== "narrow" && (
         <circle
           cx="25"
           cy="50"
           r="20"
-          stroke="#e7e7e7"
+          stroke={lightGrey}
           fill="transparent"
           stroke-width="5"
         />
@@ -120,35 +127,35 @@ export default function Letter(props) {
           cx="65"
           cy="50"
           r="20"
-          stroke="#e7e7e7"
+          stroke={lightGrey}
           fill="transparent"
           stroke-width="5"
         />
       )}
 
-      <circle cx="5" cy="5" r="3.5" fill="#e7e7e7" />
-      <circle cx="5" cy="30" r="3.5" fill="#d7d7d7" />
-      <circle cx="5" cy="50" r="3.5" fill="#c7c7c7" />
-      <circle cx="5" cy="70" r="3.5" fill="#d7d7d7" />
-      <circle cx="5" cy="95" r="3.5" fill="#e7e7e7" />
+      <circle cx="5" cy="5" r="3.5" fill={lightGrey} />
+      <circle cx="5" cy="30" r="3.5" fill={grey} />
+      <circle cx="5" cy="50" r="3.5" fill={darkGrey} />
+      <circle cx="5" cy="70" r="3.5" fill={grey} />
+      <circle cx="5" cy="95" r="3.5" fill={lightGrey} />
 
       {size !== "narrow" && (
         <>
-          <circle cx="45" cy="5" r="3.5" fill="#e7e7e7" />
-          <circle cx="45" cy="30" r="3.5" fill="#d7d7d7" />
-          <circle cx="45" cy="50" r="3.5" fill="#c7c7c7" />
-          <circle cx="45" cy="70" r="3.5" fill="#d7d7d7" />
-          <circle cx="45" cy="95" r="3.5" fill="#e7e7e7" />
+          <circle cx="45" cy="5" r="3.5" fill={lightGrey} />
+          <circle cx="45" cy="30" r="3.5" fill={grey} />
+          <circle cx="45" cy="50" r="3.5" fill={darkGrey} />
+          <circle cx="45" cy="70" r="3.5" fill={grey} />
+          <circle cx="45" cy="95" r="3.5" fill={lightGrey} />
         </>
       )}
 
       {size === "wide" && (
         <>
-          <circle cx="85" cy="5" r="3.5" fill="#e7e7e7" />
-          <circle cx="85" cy="30" r="3.5" fill="#d7d7d7" />
-          <circle cx="85" cy="50" r="3.5" fill="#c7c7c7" />
-          <circle cx="85" cy="70" r="3.5" fill="#d7d7d7" />
-          <circle cx="85" cy="95" r="3.5" fill="#e7e7e7" />
+          <circle cx="85" cy="5" r="3.5" fill={lightGrey} />
+          <circle cx="85" cy="30" r="3.5" fill={grey} />
+          <circle cx="85" cy="50" r="3.5" fill={darkGrey} />
+          <circle cx="85" cy="70" r="3.5" fill={grey} />
+          <circle cx="85" cy="95" r="3.5" fill={lightGrey} />
         </>
       )}
 
